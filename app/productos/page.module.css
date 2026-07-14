@@ -1,0 +1,59 @@
+.hero {
+  padding-top: 24px;
+  padding-bottom: 32px;
+  background: linear-gradient(180deg, var(--color-primary-light) 0%, var(--color-surface) 100%);
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+  max-width: 60ch;
+}
+
+.categoriesBar {
+  padding-block: 8px 0;
+  position: sticky;
+  top: 71px;
+  z-index: 40;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.categoryChips {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  padding-top: 4px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.categoryChips::-webkit-scrollbar {
+  display: none;
+}
+
+.categoryChip {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-ink-soft);
+  white-space: nowrap;
+  transition: border-color 150ms ease, color 150ms ease, background-color 150ms ease;
+}
+
+.categoryChip:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+.browserSection {
+  padding-top: 40px;
+}
