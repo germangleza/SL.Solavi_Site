@@ -43,35 +43,6 @@
   width: 100%;
 }
 
-.trustBar {
-  padding-bottom: 40px;
-}
-
-.trustChips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--color-border);
-}
-
-.trustChip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--color-ink-soft);
-}
-
-.dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--color-primary);
-  flex-shrink: 0;
-}
-
 @media (min-width: 900px) {
   .heroInner {
     grid-template-columns: 1.05fr 0.95fr;
