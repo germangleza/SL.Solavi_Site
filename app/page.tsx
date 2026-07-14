@@ -75,6 +75,7 @@ const sectors = solutions.map((s) => ({
   slug: s.slug,
   title: s.cardTitle,
   imageAlt: s.imageAlt,
+  image: s.image,
 }));
 
 const advantages = [
@@ -236,11 +237,21 @@ export default function HomePage() {
                 href={`/soluciones/${sector.slug}`}
                 className={styles.sectorCard}
               >
-                <MediaPlaceholder
-                  label={sector.imageAlt}
-                  ratio="16/10"
-                  className={styles.sectorMedia}
-                />
+                {sector.image ? (
+                  <Image
+                    src={sector.image}
+                    alt={sector.imageAlt}
+                    width={800}
+                    height={500}
+                    className={styles.sectorImage}
+                  />
+                ) : (
+                  <MediaPlaceholder
+                    label={sector.imageAlt}
+                    ratio="16/10"
+                    className={styles.sectorMedia}
+                  />
+                )}
                 <span className={styles.sectorBody}>
                   <span className={styles.sectorName}>{sector.title}</span>
                   <span className={styles.sectorLink}>
