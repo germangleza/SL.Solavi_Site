@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MediaPlaceholder } from "@/components/MediaPlaceholder";
 import { whatsappLink } from "@/lib/site";
+import { solutions } from "@/content/solutions";
 import {
   IconWasher,
   IconDryer,
@@ -69,14 +70,11 @@ const categories = [
   },
 ];
 
-const sectors = [
-  "Lavanderías de autoservicio",
-  "Hoteles y centros de hospedaje",
-  "Hospitales y clínicas",
-  "Lavanderías industriales",
-  "Tintorerías",
-  "Escuelas, residencias y comunidades",
-];
+const sectors = solutions.map((s) => ({
+  slug: s.slug,
+  title: s.cardTitle,
+  imageAlt: s.imageAlt,
+}));
 
 const advantages = [
   {
@@ -136,8 +134,8 @@ export default function HomePage() {
               Soluciones de lavandería para cada escala de operación
             </h1>
             <p className="lead">
-              Equipos para lavado, secado, autoservicio, planchado y acabado
-              comercial e industrial, con asesoría y atención de SV Solavi.
+              Equipos para lavado, secado, autoservicio, planchado con acabado
+              comercial e industrial.
             </p>
             <div className={styles.heroActions}>
               <Link href="/productos" className="btn btn--primary btn--lg">
@@ -167,28 +165,27 @@ export default function HomePage() {
 
       {/* 5.2 Presentación de BLCC */}
       <section className="section">
-        <div className={`container ${styles.blccGrid}`}>
-          <div className={styles.blccMedia}>
-            <MediaPlaceholder label="Instalaciones o fábrica BLCC" ratio="4/3" />
-          </div>
+        <div className="container">
           <div className={styles.blccContent}>
             <span className="eyebrow">Respaldo tecnológico</span>
             <h2>Tecnología internacional para lavanderías profesionales</h2>
             <p className="lead">
               BLCC es un fabricante especializado en equipos para lavandería
-              comercial e industrial. Su portafolio integra sistemas de lavado,
-              secado, autoservicio, lavado en seco, planchado, doblado y acabado
-              para operaciones de diferentes tamaños.
+              comercial e industrial. Cuenta con presencia en +50 países y 18 años
+              de experiencia.
             </p>
             <p className="muted">
-              La compañía integra investigación, desarrollo y producción, y trabaja
-              con soluciones configurables para hoteles, hospitales, lavanderías
-              comerciales, autoservicios y plantas industriales.
+              Integra investigación, desarrollo y producción con soluciones
+              configurables para hoteles, hospitales, lavanderías comerciales,
+              autoservicios y plantas industriales.
             </p>
             <Link href="/blcc" className={styles.textLink}>
               Conocer BLCC
               <IconArrow width={18} height={18} />
             </Link>
+          </div>
+          <div className={styles.blccMedia}>
+            <MediaPlaceholder label="Instalaciones o fábrica BLCC" ratio="16/9" />
           </div>
         </div>
       </section>
@@ -225,13 +222,28 @@ export default function HomePage() {
             <span className="eyebrow">Sectores</span>
             <h2>Soluciones para diferentes tipos de negocio</h2>
           </div>
-          <ul className={styles.sectorGrid}>
+          <div className={styles.sectorGrid}>
             {sectors.map((sector) => (
-              <li key={sector} className={styles.sectorItem}>
-                {sector}
-              </li>
+              <Link
+                key={sector.slug}
+                href={`/soluciones/${sector.slug}`}
+                className={styles.sectorCard}
+              >
+                <MediaPlaceholder
+                  label={sector.imageAlt}
+                  ratio="16/10"
+                  className={styles.sectorMedia}
+                />
+                <span className={styles.sectorBody}>
+                  <span className={styles.sectorName}>{sector.title}</span>
+                  <span className={styles.sectorLink}>
+                    Ver solución
+                    <IconArrow width={16} height={16} />
+                  </span>
+                </span>
+              </Link>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 
@@ -259,6 +271,9 @@ export default function HomePage() {
       {/* 5.6 SV Solavi */}
       <section className="section">
         <div className="container">
+          <div className={styles.logoSlot} role="img" aria-label="Logo de SV Solavi (pendiente)">
+            <span>Logo SV Solavi</span>
+          </div>
           <div className={styles.sectionHead}>
             <span className="eyebrow">SV Solavi</span>
             <h2>La tecnología de BLCC con atención cercana</h2>
