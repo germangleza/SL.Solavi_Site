@@ -125,7 +125,7 @@
 /* CTA */
 
 .cta {
-  background: var(--color-ink);
+  background: var(--color-dark);
   color: #fff;
   padding-block: var(--section-y-mobile);
 }

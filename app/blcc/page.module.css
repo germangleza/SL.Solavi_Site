@@ -1,3 +1,11 @@
+/* La página BLCC conserva la identidad roja del fabricante:
+   se reasignan los tokens de acento localmente. */
+.blccBrand {
+  --color-primary: var(--color-blcc);
+  --color-primary-dark: var(--color-blcc-dark);
+  --color-primary-light: var(--color-blcc-light);
+}
+
 /* ---------- Hero ---------- */
 
 .hero {
@@ -39,7 +47,7 @@
 
 .statsSection {
   padding-block: 40px;
-  background: var(--color-ink);
+  background: var(--color-dark);
   color: #fff;
 }
 

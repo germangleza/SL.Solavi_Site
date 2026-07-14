@@ -11,7 +11,7 @@ export function Footer() {
       <div className="container">
         <div className={styles.top}>
           <div className={styles.brandCol}>
-            <Logo />
+            <Logo variant="text" />
             <p className={styles.tagline}>
               Soluciones profesionales para lavandería comercial e industrial con
               equipos BLCC y la asesoría cercana de SV Solavi.

@@ -32,7 +32,7 @@ const stats = [
 
 export default function BlccPage() {
   return (
-    <>
+    <div className={styles.blccBrand}>
       {/* Hero */}
       <section className={styles.hero}>
         <div className="container">
@@ -195,6 +195,6 @@ export default function BlccPage() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
