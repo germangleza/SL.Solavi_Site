@@ -1,0 +1,374 @@
+/* ---------- 5.1 Hero ---------- */
+
+.hero {
+  padding-top: 48px;
+  padding-bottom: 0;
+  background: linear-gradient(180deg, var(--color-primary-light) 0%, var(--color-surface) 70%);
+}
+
+.heroInner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  padding-block: 24px 48px;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.heroTitle {
+  max-width: 16ch;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.heroMedia {
+  width: 100%;
+}
+
+.trustBar {
+  padding-bottom: 40px;
+}
+
+.trustChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.trustChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-ink-soft);
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  flex-shrink: 0;
+}
+
+@media (min-width: 900px) {
+  .heroInner {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 3.5rem;
+    padding-block: 56px 72px;
+  }
+}
+
+/* ---------- Encabezados de sección ---------- */
+
+.sectionHead {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 44ch;
+  margin-bottom: 3rem;
+}
+
+.sectionHead .lead {
+  margin-top: 0.25rem;
+}
+
+/* ---------- 5.2 BLCC ---------- */
+
+.blccGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.blccContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.textLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-top: 0.25rem;
+  transition: gap 150ms ease;
+}
+
+.textLink:hover {
+  gap: 0.7rem;
+}
+
+@media (min-width: 900px) {
+  .blccGrid {
+    grid-template-columns: 1fr 1.1fr;
+    gap: 4rem;
+  }
+}
+
+/* ---------- 5.3 Categorías ---------- */
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.categoryCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1.75rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--card-radius);
+  transition: border-color 200ms ease, transform 200ms ease;
+}
+
+.categoryCard:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-3px);
+}
+
+.categoryIcon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.categoryTitle {
+  font-size: 1.25rem;
+}
+
+.categoryDesc {
+  font-size: 0.95rem;
+  color: var(--color-ink-soft);
+  flex-grow: 1;
+}
+
+.categoryLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-primary);
+  margin-top: 0.25rem;
+}
+
+@media (min-width: 640px) {
+  .cardGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .cardGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ---------- 5.4 Sectores ---------- */
+
+.sectorGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.sectorItem {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--color-surface-alt);
+  border-radius: 14px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--color-ink);
+}
+
+.sectorItem::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  flex-shrink: 0;
+}
+
+@media (min-width: 640px) {
+  .sectorGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .sectorGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ---------- 5.5 Ventajas ---------- */
+
+.advantageGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.advantageCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.advantageIcon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-primary);
+}
+
+.advantageTitle {
+  font-size: 1.2rem;
+}
+
+.advantageDesc {
+  font-size: 0.95rem;
+  color: var(--color-ink-soft);
+}
+
+@media (min-width: 640px) {
+  .advantageGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .advantageGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ---------- 5.6 Proceso SV Solavi ---------- */
+
+.stepGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  counter-reset: step;
+}
+
+.stepCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 2rem;
+  background: var(--color-surface-alt);
+  border-radius: var(--card-radius);
+}
+
+.stepNumber {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.15rem;
+}
+
+.stepTitle {
+  font-size: 1.2rem;
+}
+
+.stepDesc {
+  font-size: 0.95rem;
+  color: var(--color-ink-soft);
+}
+
+.stepAction {
+  margin-top: 2rem;
+}
+
+@media (min-width: 800px) {
+  .stepGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ---------- 5.7 CTA final ---------- */
+
+.finalCta {
+  background: var(--color-ink);
+  color: #fff;
+  padding-block: var(--section-y-mobile);
+}
+
+.finalCtaInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+}
+
+.finalCtaTitle {
+  color: #fff;
+  max-width: 20ch;
+}
+
+.finalCtaText {
+  color: #c8cbcf;
+  max-width: 50ch;
+}
+
+.finalCtaActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .finalCta {
+    padding-block: var(--section-y-desktop);
+  }
+}
