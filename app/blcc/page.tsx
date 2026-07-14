@@ -3,7 +3,8 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { MediaPlaceholder } from "@/components/MediaPlaceholder";
 import { whatsappLink } from "@/lib/site";
-import { IconWhatsApp } from "@/components/Icons";
+import { IconWhatsApp, IconArrow } from "@/components/Icons";
+import { productCategoriesMeta } from "@/lib/products";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -134,8 +135,36 @@ export default function BlccPage() {
         </div>
       </section>
 
-      {/* Certificaciones */}
+      {/* Líneas de producto */}
       <section className="section">
+        <div className="container">
+          <div className={styles.sectionHead}>
+            <span className="eyebrow">Portafolio</span>
+            <h2>Líneas de producto BLCC</h2>
+            <p className="muted">
+              Un portafolio integral que cubre cada etapa del proceso de lavandería,
+              desde el lavado y el secado hasta el planchado y el acabado.
+            </p>
+          </div>
+          <div className={styles.portfolioGrid}>
+            {productCategoriesMeta.map((cat) => (
+              <Link
+                key={cat.slug}
+                href={`/productos/${cat.slug}`}
+                className={styles.portfolioCard}
+              >
+                <span className={styles.portfolioTitle}>{cat.title}</span>
+                <span className={styles.portfolioLink} aria-hidden="true">
+                  <IconArrow width={18} height={18} />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Certificaciones */}
+      <section className="section section--alt">
         <div className={`container ${styles.certGrid}`}>
           <div className={styles.certContent}>
             <span className="eyebrow">Certificaciones</span>
