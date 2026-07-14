@@ -117,6 +117,7 @@ export const solutions: Solution[] = [
     intro:
       "Sistemas de limpieza en seco, desmanchado, planchado, acabado, transportación y empaque.",
     imageAlt: "Tintorería profesional con equipos BLCC",
+    image: "/images/sectors/tintorerias.jpg",
     recommendedProductIds: ["swh", "gxzq", "sws", "jtj-1", "rxj-1", "ct", "bzt-50"],
     considerationsTitle: "Aspectos a evaluar",
     considerations: [
