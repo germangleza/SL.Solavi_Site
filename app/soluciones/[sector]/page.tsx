@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { MediaPlaceholder } from "@/components/MediaPlaceholder";
 import { ProductCard } from "@/components/ProductCard";
@@ -76,7 +77,18 @@ export default async function SolutionPage({
               </div>
             </div>
             <div className={styles.heroMedia}>
-              <MediaPlaceholder label={s.imageAlt} ratio="16/10" />
+              {s.image ? (
+                <Image
+                  src={s.image}
+                  alt={s.imageAlt}
+                  width={960}
+                  height={600}
+                  priority
+                  className={styles.heroImage}
+                />
+              ) : (
+                <MediaPlaceholder label={s.imageAlt} ratio="16/10" />
+              )}
             </div>
           </div>
         </div>

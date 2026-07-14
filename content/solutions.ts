@@ -8,6 +8,8 @@ export type Solution = {
   cardTitle: string;
   intro: string;
   imageAlt: string;
+  /** Ruta en /public de la fotografía del sector; si falta, se usa un placeholder. */
+  image?: string;
   /** IDs de productos recomendados (deben existir en el catálogo). */
   recommendedProductIds: string[];
   /** Título del bloque de evaluación. */
@@ -26,6 +28,7 @@ export const solutions: Solution[] = [
     intro:
       "Combina lavadoras, secadoras y torres apiladas con capacidades adaptadas al perfil de tus clientes y al espacio disponible.",
     imageAlt: "Lavandería de autoservicio con equipos BLCC",
+    image: "/images/sectors/lavanderias-autoservicio.jpg",
     recommendedProductIds: ["swq", "hgq", "shg", "xth"],
     considerationsTitle: "Aspectos a evaluar",
     considerations: [
@@ -49,6 +52,7 @@ export const solutions: Solution[] = [
     intro:
       "Soluciones para lavado, secado, planchado y doblado de sábanas, toallas, mantelería y uniformes.",
     imageAlt: "Lavandería de hotel con equipos BLCC",
+    image: "/images/sectors/hoteles.jpg",
     recommendedProductIds: ["xgq", "xsx", "hg", "yp", "zd3300-v", "ings-3300"],
     considerationsTitle: "Datos que consideramos",
     considerations: [
@@ -69,6 +73,7 @@ export const solutions: Solution[] = [
     intro:
       "Equipos orientados al procesamiento de ropa hospitalaria y textiles que requieren separación entre áreas sucia y limpia.",
     imageAlt: "Lavandería hospitalaria con equipos BLCC",
+    image: "/images/sectors/hospitales-y-clinicas.jpg",
     recommendedProductIds: ["bw", "hg", "yp", "zd3300-v", "ings-3300"],
     considerationsTitle: "Aspectos a evaluar",
     considerations: [
@@ -91,6 +96,7 @@ export const solutions: Solution[] = [
     intro:
       "Configura líneas de lavado, extracción, secado, planchado y doblado para procesar grandes cantidades de textiles.",
     imageAlt: "Lavandería industrial de alto volumen con equipos BLCC",
+    image: "/images/sectors/lavanderias-industriales.jpg",
     recommendedProductIds: ["xgq", "hg", "yp", "zd3300-v", "ings-3300", "xgb", "mg-tl"],
     considerationsTitle: "Aspectos a evaluar",
     considerations: [
@@ -133,6 +139,7 @@ export const solutions: Solution[] = [
     intro:
       "Equipos compactos y configurables para residencias estudiantiles, complejos habitacionales y servicios comunitarios.",
     imageAlt: "Lavandería compartida para residencias y comunidades con equipos BLCC",
+    image: "/images/sectors/escuelas-residencias-y-comunidades.jpg",
     recommendedProductIds: ["swq", "hgq", "shg", "xth"],
     considerationsTitle: "Aspectos a evaluar",
     considerations: [
