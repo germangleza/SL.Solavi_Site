@@ -89,18 +89,16 @@
 
 /* ---------- 5.2 BLCC ---------- */
 
-.blccGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2.5rem;
-  align-items: center;
-}
-
 .blccContent {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 1.25rem;
+  max-width: 68ch;
+}
+
+.blccMedia {
+  margin-top: 2.5rem;
 }
 
 .textLink {
@@ -119,9 +117,8 @@
 }
 
 @media (min-width: 900px) {
-  .blccGrid {
-    grid-template-columns: 1fr 1.1fr;
-    gap: 4rem;
+  .blccMedia {
+    margin-top: 3rem;
   }
 }
 
@@ -198,28 +195,54 @@
 .sectorGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
-.sectorItem {
+.sectorCard {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+}
+
+.sectorCard:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(22, 22, 22, 0.07);
+}
+
+.sectorMedia {
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.sectorBody {
   display: flex;
   align-items: center;
-  gap: 0.9rem;
+  justify-content: space-between;
+  gap: 1rem;
   padding: 1.25rem 1.5rem;
-  background: var(--color-surface-alt);
-  border-radius: 14px;
+}
+
+.sectorName {
   font-family: var(--font-heading);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.05rem;
   color: var(--color-ink);
 }
 
-.sectorItem::before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--color-primary);
+.sectorLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-primary);
   flex-shrink: 0;
 }
 
@@ -283,6 +306,22 @@
 }
 
 /* ---------- 5.6 Proceso SV Solavi ---------- */
+
+.logoSlot {
+  display: grid;
+  place-items: center;
+  width: 220px;
+  max-width: 100%;
+  height: 96px;
+  margin-bottom: 2rem;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--card-radius);
+  background: var(--color-surface-alt);
+  color: var(--color-muted);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
 
 .stepGrid {
   display: grid;
