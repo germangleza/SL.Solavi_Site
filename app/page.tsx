@@ -186,7 +186,13 @@ export default function HomePage() {
             </Link>
           </div>
           <div className={styles.blccMedia}>
-            <MediaPlaceholder label="Instalaciones o fábrica BLCC" ratio="16/9" />
+            <Image
+              src="/images/blcc/facilities.jpg"
+              alt="Instalaciones de la fábrica BLCC"
+              width={1600}
+              height={900}
+              className={styles.blccImage}
+            />
           </div>
         </div>
       </section>

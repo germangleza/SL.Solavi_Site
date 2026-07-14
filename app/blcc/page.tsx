@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { MediaPlaceholder } from "@/components/MediaPlaceholder";
 import { whatsappLink } from "@/lib/site";
@@ -55,7 +56,14 @@ export default function BlccPage() {
               </div>
             </div>
             <div className={styles.heroMedia}>
-              <MediaPlaceholder label="Imagen institucional BLCC" ratio="4/3" />
+              <Image
+                src="/images/blcc/facilities.jpg"
+                alt="Instalaciones de la fábrica BLCC"
+                width={1600}
+                height={1201}
+                priority
+                className={styles.heroImage}
+              />
             </div>
           </div>
         </div>

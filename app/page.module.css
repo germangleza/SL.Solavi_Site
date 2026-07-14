@@ -101,6 +101,15 @@
   margin-top: 2.5rem;
 }
 
+.blccImage {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--card-radius);
+  border: 1px solid var(--color-border);
+}
+
 .textLink {
   display: inline-flex;
   align-items: center;
