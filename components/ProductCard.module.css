@@ -1,0 +1,116 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+}
+
+.card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(22, 22, 22, 0.07);
+}
+
+.mediaLink {
+  display: block;
+}
+
+.media {
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.5rem;
+  flex-grow: 1;
+}
+
+.category {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.name {
+  font-size: 1.2rem;
+  line-height: 1.25;
+}
+
+.nameLink::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.name {
+  position: static;
+}
+
+.card {
+  position: relative;
+}
+
+.desc {
+  font-size: 0.925rem;
+  color: var(--color-ink-soft);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.capacity {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-top: auto;
+}
+
+.capacityLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.viewLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.925rem;
+  color: var(--color-primary);
+}
+
+/* El botón Cotizar debe quedar por encima del enlace de tarjeta. */
+.quoteBtn {
+  position: relative;
+  z-index: 1;
+  padding: 0.55rem 1rem;
+  font-size: 0.9rem;
+}

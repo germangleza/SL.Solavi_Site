@@ -1,0 +1,237 @@
+/* ---------- Hero ---------- */
+
+.hero {
+  padding-top: 24px;
+  padding-bottom: 48px;
+  background: linear-gradient(180deg, var(--color-primary-light) 0%, var(--color-surface) 80%);
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--color-ink);
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.heroMedia {
+  position: sticky;
+  top: 90px;
+}
+
+@media (min-width: 900px) {
+  .heroGrid {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 3.5rem;
+  }
+}
+
+/* ---------- Bloques ---------- */
+
+.blockTitle {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  margin-bottom: 1.5rem;
+}
+
+/* Aplicaciones */
+
+.applications {
+  padding-block: 40px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.appList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.appItem {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: var(--color-surface-alt);
+  border-radius: 999px;
+  font-size: 0.925rem;
+  font-weight: 500;
+  color: var(--color-ink-soft);
+}
+
+/* Beneficios */
+
+.benefitGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.benefitItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 1rem;
+  color: var(--color-ink-soft);
+}
+
+.benefitDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  margin-top: 0.55rem;
+  flex-shrink: 0;
+}
+
+@media (min-width: 640px) {
+  .benefitGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 2.5rem;
+  }
+}
+
+/* Especificaciones */
+
+.specNote {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  max-width: 70ch;
+  margin-bottom: 2rem;
+}
+
+.tables {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.technicalNotice {
+  margin-top: 2rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--color-primary-light);
+  border-left: 3px solid var(--color-primary);
+  border-radius: 0 var(--button-radius) var(--button-radius) 0;
+  font-size: 0.95rem;
+  color: var(--color-ink-soft);
+}
+
+.technicalNotice strong {
+  color: var(--color-primary-dark);
+}
+
+/* CTA */
+
+.cta {
+  background: var(--color-ink);
+  color: #fff;
+  padding-block: var(--section-y-mobile);
+}
+
+.ctaInner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.ctaTitle {
+  color: #fff;
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  max-width: 20ch;
+}
+
+.ctaText {
+  color: #c8cbcf;
+  margin-top: 0.75rem;
+  max-width: 55ch;
+}
+
+.ctaActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .cta {
+    padding-block: 80px;
+  }
+  .ctaInner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .ctaActions {
+    flex-shrink: 0;
+    flex-direction: column;
+  }
+}
+
+/* Relacionados */
+
+.relatedHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.relatedLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.925rem;
+  color: var(--color-primary);
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .relatedGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .relatedGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
