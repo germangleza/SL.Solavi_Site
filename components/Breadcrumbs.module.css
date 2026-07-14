@@ -1,0 +1,35 @@
+.breadcrumbs {
+  font-size: 0.875rem;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-muted);
+}
+
+.item a {
+  color: var(--color-muted);
+  transition: color 150ms ease;
+}
+
+.item a:hover {
+  color: var(--color-primary);
+}
+
+.item [aria-current="page"] {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+.sep {
+  color: var(--color-border);
+}
