@@ -15,13 +15,6 @@ import {
 } from "@/components/Icons";
 import styles from "./page.module.css";
 
-const trustChips = [
-  "Fabricante de equipos desde 2008",
-  "Presencia internacional",
-  "Equipos bajo estándares CE",
-  "Configuraciones para distintos niveles de operación",
-];
-
 const categories = [
   {
     slug: "lavado-industrial",
@@ -121,17 +114,6 @@ export default function HomePage() {
           <div className={styles.heroMedia}>
             <MediaPlaceholder label="Composición de equipos BLCC" ratio="4/3" />
           </div>
-        </div>
-
-        <div className={`container ${styles.trustBar}`}>
-          <ul className={styles.trustChips}>
-            {trustChips.map((chip) => (
-              <li key={chip} className={styles.trustChip}>
-                <span className={styles.dot} aria-hidden="true" />
-                {chip}
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 
