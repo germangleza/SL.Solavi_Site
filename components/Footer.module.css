@@ -21,6 +21,15 @@
   color: #9aa0a6;
 }
 
+/* El logo tiene fondo blanco; se enmarca en una insignia clara para que
+   se lea bien sobre el footer oscuro. */
+.logoBadge {
+  display: inline-flex;
+  padding: 0.625rem 0.875rem;
+  background: #fff;
+  border-radius: 12px;
+}
+
 .tagline {
   margin-top: 1rem;
   font-size: 0.95rem;
