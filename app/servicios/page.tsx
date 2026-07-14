@@ -37,6 +37,29 @@ const coreServices = [
   },
 ];
 
+const maintenanceServices = [
+  {
+    title: "Mantenimiento preventivo",
+    description:
+      "Revisiones programadas para conservar el desempeño de los equipos y reducir paros no planificados.",
+  },
+  {
+    title: "Mantenimiento correctivo",
+    description:
+      "Diagnóstico y reparación de fallas para devolver los equipos a su operación normal.",
+  },
+  {
+    title: "Pólizas de mantenimiento",
+    description:
+      "Planes de servicio con visitas y cobertura definidas para dar continuidad a tu operación.",
+  },
+  {
+    title: "Reconstrucción de equipos",
+    description:
+      "Rehabilitación de maquinaria para extender su vida útil y recuperar su capacidad de trabajo.",
+  },
+];
+
 const additionalServices = [
   {
     title: "Instalación",
@@ -49,9 +72,9 @@ const additionalServices = [
       "Alcance, modalidad y duración se definen según el proyecto y los equipos seleccionados.",
   },
   {
-    title: "Refacciones y servicio",
+    title: "Refacciones",
     description:
-      "Cobertura, tiempos y condiciones se confirman de acuerdo con cada operación.",
+      "Suministro de refacciones para tus equipos; cobertura y tiempos se confirman según la operación.",
   },
 ];
 
@@ -66,7 +89,9 @@ export default function ServicesPage() {
             <h1>Acompañamiento para seleccionar e implementar tus equipos</h1>
             <p className="lead">
               Te acompañamos desde el diagnóstico de tu operación hasta la
-              cotización y el suministro de los equipos adecuados para tu proyecto.
+              cotización, el suministro y el mantenimiento de los equipos, con
+              servicio preventivo, correctivo, pólizas y reconstrucción de
+              maquinaria.
             </p>
           </div>
         </div>
@@ -87,6 +112,27 @@ export default function ServicesPage() {
       </section>
 
       <section className="section section--alt">
+        <div className="container">
+          <div className={styles.sectionHead}>
+            <span className="eyebrow">Mantenimiento y soporte</span>
+            <h2>Servicio para que tus equipos sigan trabajando</h2>
+            <p className="muted">
+              Además de la venta, damos soporte a la operación de tus equipos a lo
+              largo de su vida útil.
+            </p>
+          </div>
+          <div className={styles.coreGrid}>
+            {maintenanceServices.map((s) => (
+              <article key={s.title} className={styles.coreCard}>
+                <h3 className={styles.coreTitle}>{s.title}</h3>
+                <p className={styles.coreDesc}>{s.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
         <div className="container">
           <div className={styles.sectionHead}>
             <span className="eyebrow">Según el proyecto</span>

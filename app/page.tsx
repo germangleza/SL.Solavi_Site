@@ -265,7 +265,9 @@ export default function HomePage() {
             <p className="lead">
               SV Solavi te ayuda a evaluar las necesidades de tu operación,
               identificar capacidades y construir una propuesta de equipos adecuada
-              para tu proyecto.
+              para tu proyecto. Y después de la venta te damos servicio con
+              mantenimiento preventivo, correctivo, pólizas y reconstrucción de
+              equipos.
             </p>
           </div>
           <ol className={styles.stepGrid}>
@@ -280,6 +282,9 @@ export default function HomePage() {
           <div className={styles.stepAction}>
             <Link href="/contacto" className="btn btn--primary btn--lg">
               Hablar con un asesor
+            </Link>
+            <Link href="/servicios" className="btn btn--secondary btn--lg">
+              Conocer nuestros servicios
             </Link>
           </div>
         </div>
