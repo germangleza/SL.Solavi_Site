@@ -1,0 +1,118 @@
+.page {
+  padding-block: 40px var(--section-y-mobile);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.intro h1 {
+  margin-top: 0.5rem;
+}
+
+.benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.benefits li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.975rem;
+  color: var(--color-ink-soft);
+}
+
+.benefits li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  margin-top: 0.5rem;
+  flex-shrink: 0;
+}
+
+.directContact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.whatsappCard,
+.emailCard {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--card-radius);
+  transition: border-color 150ms ease;
+}
+
+.whatsappCard:hover,
+.emailCard:hover {
+  border-color: var(--color-primary);
+}
+
+.whatsappIcon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-whatsapp);
+  color: #062b13;
+  flex-shrink: 0;
+}
+
+.directLabel {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-ink);
+}
+
+.directValue {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}
+
+.formWrap {
+  padding: 1.75rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--card-radius);
+  box-shadow: 0 12px 32px rgba(22, 22, 22, 0.05);
+}
+
+@media (min-width: 900px) {
+  .page {
+    padding-block: 48px var(--section-y-desktop);
+  }
+  .grid {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 4rem;
+  }
+  .intro {
+    position: sticky;
+    top: 96px;
+  }
+  .formWrap {
+    padding: 2.5rem;
+  }
+}
