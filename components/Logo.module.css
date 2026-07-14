@@ -4,6 +4,18 @@
   gap: 0.625rem;
 }
 
+.image {
+  width: auto;
+  height: 40px;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .image {
+    height: 46px;
+  }
+}
+
 .mark {
   display: grid;
   place-items: center;

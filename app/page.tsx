@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MediaPlaceholder } from "@/components/MediaPlaceholder";
 import { whatsappLink } from "@/lib/site";
 import { solutions } from "@/content/solutions";
@@ -271,9 +272,13 @@ export default function HomePage() {
       {/* 5.6 SV Solavi */}
       <section className="section">
         <div className="container">
-          <div className={styles.logoSlot} role="img" aria-label="Logo de SV Solavi (pendiente)">
-            <span>Logo SV Solavi</span>
-          </div>
+          <Image
+            src="/images/logo/LOGO.jpg"
+            alt="SV Solavi — Soluciones para lavanderías industriales"
+            width={260}
+            height={74}
+            className={styles.logoImage}
+          />
           <div className={styles.sectionHead}>
             <span className="eyebrow">SV Solavi</span>
             <h2>La tecnología de BLCC con atención cercana</h2>

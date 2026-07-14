@@ -1,8 +1,16 @@
 :root {
-  /* Marca / acento */
-  --color-primary: #d62828;
-  --color-primary-dark: #a7191f;
-  --color-primary-light: #fcebec;
+  /* Marca SV Solavi / acento (azul del logo) */
+  --color-primary: #145aa0;
+  --color-primary-dark: #0f4880;
+  --color-primary-light: #e8f0f8;
+
+  /* Azul pizarra del logo (segundo tono) */
+  --color-slate: #465a64;
+
+  /* Marca BLCC (rojo) — solo para la sección BLCC */
+  --color-blcc: #d62828;
+  --color-blcc-dark: #a7191f;
+  --color-blcc-light: #fcebec;
 
   /* Tinta / texto */
   --color-ink: #161616;
@@ -13,6 +21,7 @@
   --color-surface: #ffffff;
   --color-surface-alt: #f5f6f7;
   --color-border: #e3e5e8;
+  --color-dark: #26333d; /* bandas oscuras (pizarra) */
 
   /* Estados */
   --color-success: #167d4c;

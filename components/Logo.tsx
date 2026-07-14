@@ -1,16 +1,38 @@
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./Logo.module.css";
 
-export function Logo({ compact = false }: { compact?: boolean }) {
+const ALT = "SV Solavi — Soluciones para lavanderías industriales";
+
+export function Logo({
+  variant = "image",
+}: {
+  variant?: "image" | "text";
+}) {
+  if (variant === "text") {
+    return (
+      <Link href="/" className={styles.logo} aria-label="SV Solavi — inicio">
+        <span className={styles.mark} aria-hidden="true">
+          SV
+        </span>
+        <span className={styles.text}>
+          <span className={styles.brand}>SV Solavi</span>
+          <span className={styles.seal}>Equipos BLCC</span>
+        </span>
+      </Link>
+    );
+  }
+
   return (
     <Link href="/" className={styles.logo} aria-label="SV Solavi — inicio">
-      <span className={styles.mark} aria-hidden="true">
-        SV
-      </span>
-      <span className={styles.text}>
-        <span className={styles.brand}>SV Solavi</span>
-        {!compact && <span className={styles.seal}>Equipos BLCC</span>}
-      </span>
+      <Image
+        src="/images/logo/LOGO.jpg"
+        alt={ALT}
+        width={168}
+        height={48}
+        priority
+        className={styles.image}
+      />
     </Link>
   );
 }
