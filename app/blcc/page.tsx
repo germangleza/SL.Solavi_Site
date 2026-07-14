@@ -26,8 +26,8 @@ const principles = [
 const stats = [
   { value: "Desde 2008", label: "Fabricando equipos de lavandería" },
   { value: "50+", label: "Países con presencia" },
-  { value: "200,000 m²", label: "Base industrial", note: true },
-  { value: "300+", label: "Integrantes en investigación y desarrollo", note: true },
+  { value: "200,000 m²", label: "Base industrial" },
+  { value: "300+", label: "Integrantes en investigación y desarrollo" },
 ];
 
 export default function BlccPage() {
@@ -67,18 +67,11 @@ export default function BlccPage() {
           <ul className={styles.statGrid}>
             {stats.map((stat) => (
               <li key={stat.label} className={styles.statCard}>
-                <span className={styles.statValue}>
-                  {stat.value}
-                  {stat.note && <sup className={styles.asterisk}>*</sup>}
-                </span>
+                <span className={styles.statValue}>{stat.value}</span>
                 <span className={styles.statLabel}>{stat.label}</span>
               </li>
             ))}
           </ul>
-          <p className={styles.statsNote}>
-            * Datos comunicados en materiales corporativos de BLCC; se validan antes
-            de su publicación definitiva.
-          </p>
         </div>
       </section>
 
@@ -96,12 +89,6 @@ export default function BlccPage() {
               desarrollo y producción, con un portafolio que abarca lavadoras
               extractoras, secadoras, sistemas de autoservicio, equipos de lavado en
               seco, calandras, dobladoras y maquinaria de acabado.
-            </p>
-            <p className="muted">
-              El catálogo corporativo comunica una base industrial de
-              aproximadamente 200,000 m², un equipo de investigación y desarrollo de
-              más de 300 personas y una operación orientada a proyectos nacionales e
-              internacionales.
             </p>
           </div>
         </div>
