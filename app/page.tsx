@@ -10,10 +10,6 @@ import {
   IconDrop,
   IconIron,
   IconTools,
-  IconShield,
-  IconChip,
-  IconScale,
-  IconLayers,
   IconArrow,
   IconWhatsApp,
 } from "@/components/Icons";
@@ -77,33 +73,6 @@ const sectors = solutions.map((s) => ({
   imageAlt: s.imageAlt,
   image: s.image,
 }));
-
-const advantages = [
-  {
-    title: "Durabilidad",
-    description:
-      "Construcción orientada a trabajo comercial e industrial, con uso de acero inoxidable en componentes clave según el modelo.",
-    Icon: IconShield,
-  },
-  {
-    title: "Control y automatización",
-    description:
-      "Paneles programables y controles por microcomputadora para facilitar la configuración de ciclos y procesos.",
-    Icon: IconChip,
-  },
-  {
-    title: "Diferentes capacidades",
-    description:
-      "Alternativas desde equipos compactos hasta maquinaria para operaciones de gran volumen.",
-    Icon: IconScale,
-  },
-  {
-    title: "Configuración del proyecto",
-    description:
-      "Selecciona capacidades, alimentación eléctrica, método de calentamiento y combinación de equipos según tu proyecto.",
-    Icon: IconLayers,
-  },
-];
 
 const steps = [
   {
@@ -265,29 +234,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5.5 Ventajas */}
-      <section className="section section--alt">
-        <div className="container">
-          <div className={styles.sectionHead}>
-            <span className="eyebrow">Por qué BLCC</span>
-            <h2>Equipos diseñados para una operación confiable</h2>
-          </div>
-          <div className={styles.advantageGrid}>
-            {advantages.map(({ title, description, Icon }) => (
-              <article key={title} className={styles.advantageCard}>
-                <span className={styles.advantageIcon}>
-                  <Icon width={24} height={24} />
-                </span>
-                <h3 className={styles.advantageTitle}>{title}</h3>
-                <p className={styles.advantageDesc}>{description}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* 5.6 SV Solavi */}
-      <section className="section">
+      <section className="section section--alt">
         <div className="container">
           <Image
             src="/images/logo/LOGO.jpg"
