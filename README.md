@@ -57,8 +57,14 @@ public/images/  Imágenes y placeholders
 - [x] Sistema de diseño y layout base (encabezado fijo, footer, WhatsApp
       flotante, barra de CTA en móvil).
 - [x] Página de inicio (secciones 5.1–5.7 del documento maestro).
-- [ ] Catálogo, páginas de producto, soluciones, BLCC, servicios, nosotros y
-      contacto.
+- [x] Página BLCC (sección 6).
+- [x] Catálogo `/productos`, categorías y 24 fichas de producto (secciones 7, 8, 14).
+- [x] Soluciones por sector `/soluciones` y sus 6 páginas (sección 9).
+- [x] Servicios (sección 10).
+- [x] Nosotros (sección 11).
+- [x] Contacto con formulario de cotización (secciones 4.5 y 12).
+- [ ] Contenido pendiente por SV Solavi (datos corporativos, fotos reales,
+      fichas técnicas descargables) y revisión previa a publicación (sección 15).
 
 ## Nota de contenido
 
