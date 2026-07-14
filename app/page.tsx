@@ -172,9 +172,9 @@ export default function HomePage() {
             <span className="eyebrow">Respaldo tecnológico</span>
             <h2>Tecnología internacional para lavanderías profesionales</h2>
             <p className="lead">
-              BLCC es un fabricante especializado en equipos para lavandería
-              comercial e industrial. Cuenta con presencia en +50 países y 18 años
-              de experiencia.
+              Somos distribuidores de BLCC, un fabricante especializado en equipos
+              para lavandería comercial e industrial. Cuenta con presencia en +50
+              países y 18 años de experiencia.
             </p>
             <p className="muted">
               Integra investigación, desarrollo y producción con soluciones
