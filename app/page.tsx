@@ -102,7 +102,8 @@ export default function HomePage() {
           <div className={styles.heroContent}>
             <span className="eyebrow">Equipos profesionales BLCC</span>
             <h1 className={styles.heroTitle}>
-              Soluciones de lavandería para cada escala de operación
+              Soluciones de <span className={styles.heroAccent}>lavandería</span> para
+              cada escala de operación
             </h1>
             <p className="lead">
               Equipos para lavado, secado, autoservicio, planchado con acabado
