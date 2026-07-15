@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { MediaPlaceholder } from "@/components/MediaPlaceholder";
 import { ModelComparisonTable } from "@/components/ModelComparisonTable";
@@ -67,7 +68,7 @@ export default async function ProductPage({
     manufacturer: { "@type": "Organization", name: "BLCC" },
     description: p.summary,
     category: cat?.title ?? "Equipo de lavandería",
-    ...(p.imageAlt && { image: `${site.baseUrl}/images/placeholders/product-4x3.webp` }),
+    image: `${site.baseUrl}${p.image ?? "/images/placeholders/product-4x3.webp"}`,
   };
 
   return (
@@ -122,7 +123,18 @@ export default async function ProductPage({
               </div>
             </div>
             <div className={styles.heroMedia}>
-              <MediaPlaceholder label={p.imageAlt} ratio="4/3" />
+              {p.image ? (
+                <Image
+                  src={p.image}
+                  alt={p.imageAlt}
+                  width={1448}
+                  height={1086}
+                  priority
+                  className={styles.heroPhoto}
+                />
+              ) : (
+                <MediaPlaceholder label={p.imageAlt} ratio="4/3" />
+              )}
             </div>
           </div>
         </div>

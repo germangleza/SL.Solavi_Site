@@ -26,6 +26,8 @@ export type Product = {
   capacities?: string[];
   heatingMethods?: string[];
   imageAlt: string;
+  /** Ruta a una foto real del equipo en /public. Si falta, se usa un placeholder. */
+  image?: string;
   specTables: SpecTable[];
   technicalNotice?: string;
   ctaLabel: string;

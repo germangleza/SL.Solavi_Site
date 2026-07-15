@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MediaPlaceholder } from "./MediaPlaceholder";
 import { IconArrow } from "./Icons";
 import { productHref, getCategory, type Product } from "@/lib/products";
@@ -17,7 +18,17 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <article className={styles.card}>
       <Link href={href} className={styles.mediaLink} tabIndex={-1} aria-hidden="true">
-        <MediaPlaceholder label={product.imageAlt} ratio="4/3" className={styles.media} />
+        {product.image ? (
+          <Image
+            src={product.image}
+            alt={product.imageAlt}
+            width={1448}
+            height={1086}
+            className={styles.photo}
+          />
+        ) : (
+          <MediaPlaceholder label={product.imageAlt} ratio="4/3" className={styles.media} />
+        )}
       </Link>
       <div className={styles.body}>
         {category && <span className={styles.category}>{category.shortTitle}</span>}
