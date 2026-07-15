@@ -237,11 +237,10 @@ export default function HomePage() {
             <span className="eyebrow">SV Solavi</span>
             <h2>La tecnología de BLCC con atención cercana</h2>
             <p className="lead">
-              SV Solavi te ayuda a evaluar las necesidades de tu operación,
-              identificar capacidades y construir una propuesta de equipos adecuada
-              para tu proyecto. Y después de la venta te damos servicio con
-              mantenimiento preventivo, correctivo, pólizas y reconstrucción de
-              equipos.
+              En SV Solavi te ayudamos a evaluar las necesidades de tu operación y
+              construir una propuesta de equipos adecuada para tu proyecto. Después de
+              la venta, te damos servicio de mantenimiento preventivo, correctivo y
+              más.
             </p>
           </div>
           <ol className={styles.stepGrid}>
