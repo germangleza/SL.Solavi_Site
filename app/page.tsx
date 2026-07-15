@@ -112,7 +112,14 @@ export default function HomePage() {
             </div>
           </div>
           <div className={styles.heroMedia}>
-            <MediaPlaceholder label="Composición de equipos BLCC" ratio="4/3" />
+            <Image
+              src="/images/home/hero.jpg"
+              alt="Equipos de lavandería industrial BLCC"
+              width={1920}
+              height={1307}
+              priority
+              className={styles.heroImage}
+            />
           </div>
         </div>
       </section>
