@@ -91,14 +91,23 @@ export default function HomePage() {
     <>
       {/* 5.1 Hero */}
       <section className={styles.hero}>
+        <Image
+          src="/images/home/hero.jpg"
+          alt="Equipos de lavandería industrial BLCC"
+          fill
+          priority
+          sizes="100vw"
+          className={styles.heroBgImage}
+        />
+        <div className={styles.heroOverlay} aria-hidden="true" />
         <div className={`container ${styles.heroInner}`}>
           <div className={styles.heroContent}>
-            <span className="eyebrow">Equipos profesionales BLCC</span>
+            <span className={`eyebrow ${styles.heroEyebrow}`}>Equipos profesionales BLCC</span>
             <h1 className={styles.heroTitle}>
               Soluciones de <span className={styles.heroAccent}>lavandería</span> para
               cada escala de operación
             </h1>
-            <p className="lead">
+            <p className={`lead ${styles.heroLead}`}>
               Equipos para lavado, secado, autoservicio, planchado con acabado
               comercial e industrial.
             </p>
@@ -110,16 +119,6 @@ export default function HomePage() {
                 Solicitar cotización
               </Link>
             </div>
-          </div>
-          <div className={styles.heroMedia}>
-            <Image
-              src="/images/home/hero.jpg"
-              alt="Equipos de lavandería industrial BLCC"
-              width={1920}
-              height={1307}
-              priority
-              className={styles.heroImage}
-            />
           </div>
         </div>
       </section>
