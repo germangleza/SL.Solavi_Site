@@ -13,7 +13,12 @@
   object-fit: cover;
   object-position: center;
   z-index: -2;
-  animation: heroImageIn 1400ms ease-out both;
+}
+
+/* La imagen es el LCP: solo se anima `scale` (nunca `opacity`) para no
+   retrasar el primer paint. Gateado a una sola vez por sesión. */
+:global(html:not(.no-hero-intro)) .heroBgImage {
+  animation: heroImageIn 900ms var(--ease-freno) both;
 }
 
 .heroOverlay {
@@ -27,7 +32,6 @@
     rgba(10, 16, 22, 0.45) 68%,
     rgba(10, 16, 22, 0.25) 100%
   );
-  animation: heroFadeIn 900ms ease-out both;
 }
 
 .heroInner {
@@ -44,13 +48,24 @@
 
 .heroEyebrow {
   color: #bcd6f5;
-  animation: heroFadeUp 700ms cubic-bezier(0.22, 1, 0.36, 1) 150ms both;
+}
+
+:global(html:not(.no-hero-intro)) .heroEyebrow {
+  animation: heroFadeUpSmall 380ms var(--ease-freno) 250ms both;
 }
 
 .heroTitle {
-  max-width: 16ch;
   color: #fff;
-  animation: heroFadeUp 700ms cubic-bezier(0.22, 1, 0.36, 1) 280ms both;
+}
+
+.heroLine {
+  display: block;
+  overflow: hidden;
+}
+
+:global(html:not(.no-hero-intro)) .heroLine {
+  animation: heroLineIn 620ms var(--ease-freno) both;
+  animation-delay: calc(340ms + var(--i, 0) * 80ms);
 }
 
 .heroAccent {
@@ -62,7 +77,10 @@
 
 .heroLead {
   color: #e6ebf0;
-  animation: heroFadeUp 700ms cubic-bezier(0.22, 1, 0.36, 1) 420ms both;
+}
+
+:global(html:not(.no-hero-intro)) .heroLead {
+  animation: heroFadeUp 420ms var(--ease-freno) 600ms both;
 }
 
 .heroActions {
@@ -70,13 +88,17 @@
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 0.5rem;
-  animation: heroFadeUp 700ms cubic-bezier(0.22, 1, 0.36, 1) 560ms both;
+}
+
+:global(html:not(.no-hero-intro)) .heroCta {
+  animation: heroFadeUp 380ms var(--ease-freno) both;
+  animation-delay: calc(700ms + var(--i, 0) * 70ms);
 }
 
 @keyframes heroFadeUp {
   from {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -84,22 +106,31 @@
   }
 }
 
-@keyframes heroFadeIn {
+@keyframes heroFadeUpSmall {
   from {
     opacity: 0;
+    transform: translateY(6px);
   }
   to {
     opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes heroLineIn {
+  from {
+    clip-path: inset(105% 0 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
   }
 }
 
 @keyframes heroImageIn {
   from {
-    opacity: 0;
     transform: scale(1.06);
   }
   to {
-    opacity: 1;
     transform: scale(1);
   }
 }
@@ -189,12 +220,17 @@
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--card-radius);
-  transition: border-color 200ms ease, transform 200ms ease;
+  transition: border-color var(--d-hover) var(--ease-estado), transform var(--d-hover) var(--ease-estado);
 }
 
 .categoryCard:hover {
   border-color: var(--color-primary);
   transform: translateY(-3px);
+}
+
+.categoryCard:active {
+  transform: translateY(-1px);
+  transition-duration: 100ms;
 }
 
 .categoryIcon {
@@ -226,6 +262,11 @@
   font-size: 0.95rem;
   color: var(--color-primary);
   margin-top: 0.25rem;
+  transition: transform 200ms var(--ease-estado);
+}
+
+.categoryCard:hover .categoryLink {
+  transform: translateX(5px);
 }
 
 @media (min-width: 640px) {
@@ -255,7 +296,8 @@
   border: 1px solid var(--color-border);
   border-radius: var(--card-radius);
   overflow: hidden;
-  transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+  transition: border-color var(--d-hover) var(--ease-estado), transform var(--d-hover) var(--ease-estado),
+    box-shadow var(--d-hover) var(--ease-estado);
 }
 
 .sectorCard:hover {
@@ -270,12 +312,23 @@
   border-bottom: 1px solid var(--color-border);
 }
 
+.sectorImageWrap {
+  display: block;
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-border);
+}
+
 .sectorImage {
   width: 100%;
   height: auto;
   aspect-ratio: 16 / 10;
   object-fit: cover;
-  border-bottom: 1px solid var(--color-border);
+  display: block;
+  transition: transform 600ms var(--ease-freno);
+}
+
+.sectorCard:hover .sectorImage {
+  transform: scale(1.06);
 }
 
 .sectorBody {
@@ -284,6 +337,13 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 1.25rem 1.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  transition: transform 200ms var(--ease-estado), background-color 200ms var(--ease-estado);
+}
+
+.sectorCard:hover .sectorBody {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .sectorName {
@@ -344,17 +404,94 @@
   border-radius: var(--card-radius);
 }
 
+/* La firma: el ciclo de 3 pasos. Anillo que se traza, número que aparece
+   al 60% del trazo, conector que se dibuja hacia el siguiente paso.
+   Disparado una sola vez cuando `.stepGrid` entra en viewport. */
+
+.stepRingWrap {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 0.5rem;
+}
+
+.stepRing {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.stepRingTrack {
+  fill: none;
+  stroke: var(--color-border);
+  stroke-width: 3;
+}
+
+.stepRingProgress {
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 251;
+  stroke-dashoffset: 251;
+  transition: stroke-dashoffset var(--d-ciclo) var(--ease-tambor);
+  transition-delay: calc(var(--i, 0) * 500ms);
+}
+
+.stepGrid:global(.is-in) .stepRingProgress {
+  stroke-dashoffset: 0;
+}
+
 .stepNumber {
+  position: absolute;
+  inset: 0;
   display: grid;
   place-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--color-primary);
-  color: #fff;
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: 1.15rem;
+  font-size: 1.35rem;
+  color: var(--color-primary);
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms var(--ease-freno), transform 300ms var(--ease-freno);
+  transition-delay: calc(var(--i, 0) * 500ms + 540ms);
+}
+
+.stepGrid:global(.is-in) .stepNumber {
+  opacity: 1;
+  transform: none;
+}
+
+.stepConnector {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 1.5rem;
+  height: 2px;
+  margin-top: -1px;
+  background: var(--color-primary);
+  opacity: 0.35;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 500ms var(--ease-tambor);
+  transition-delay: calc(var(--i, 0) * 500ms + 900ms);
+}
+
+.stepGrid:global(.is-in) .stepConnector {
+  transform: scaleX(1);
+}
+
+@media (max-width: 799px) {
+  .stepConnector {
+    top: 100%;
+    left: 50%;
+    width: 2px;
+    height: 1.5rem;
+    margin-top: 0;
+    margin-left: -1px;
+    transform: scaleY(0);
+    transform-origin: top center;
+  }
 }
 
 .stepTitle {

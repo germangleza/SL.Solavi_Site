@@ -38,6 +38,16 @@
   /* Tipografía */
   --font-heading: var(--font-manrope), "Manrope", "Segoe UI", system-ui, sans-serif;
   --font-body: var(--font-inter), "Inter", "Segoe UI", system-ui, sans-serif;
+
+  /* Motion — arranque decidido, frenado largo. Sin rebote en todo el sitio. */
+  --ease-tambor: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-freno: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-estado: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --d-clic: 160ms;
+  --d-hover: 240ms;
+  --d-entra: 520ms;
+  --d-ciclo: 900ms;
 }
 
 *,
@@ -56,15 +66,18 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
   }
 }
 
@@ -131,9 +144,8 @@ button {
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-primary);
-  outline-offset: 2px;
-  border-radius: 4px;
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
 }
 
 /* ---------- Utilidades de layout ---------- */
@@ -194,8 +206,8 @@ button {
   font-size: 1rem;
   line-height: 1;
   text-align: center;
-  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease,
-    transform 150ms ease;
+  transition: background-color var(--d-hover) var(--ease-estado), color var(--d-hover) var(--ease-estado),
+    border-color var(--d-hover) var(--ease-estado), transform var(--d-clic) var(--ease-estado);
 }
 
 .btn:active {
@@ -205,20 +217,30 @@ button {
 .btn--primary {
   background: var(--color-primary);
   color: #fff;
+  transition-duration: var(--d-clic);
 }
 
 .btn--primary:hover {
   background: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.btn--primary:active {
+  transform: translateY(0);
+  transition-duration: 80ms;
 }
 
 .btn--secondary {
   background: var(--color-surface);
   color: var(--color-ink);
   border-color: var(--color-border);
+  transition-duration: 200ms;
 }
 
 .btn--secondary:hover {
-  border-color: var(--color-ink);
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
 }
 
 .btn--ghost {
@@ -234,10 +256,11 @@ button {
 .btn--whatsapp {
   background: var(--color-whatsapp);
   color: #062b13;
+  transition-duration: 200ms;
 }
 
 .btn--whatsapp:hover {
-  filter: brightness(0.95);
+  transform: scale(1.04);
 }
 
 .btn--lg {
@@ -284,4 +307,56 @@ button {
 
 .skip-link:focus {
   top: 8px;
+}
+
+/* ---------- Reveal (entradas por scroll) ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity var(--d-entra) var(--ease-freno),
+    transform var(--d-entra) var(--ease-freno);
+  transition-delay: calc(var(--i, 0) * 80ms);
+}
+
+.reveal:not(.is-in) {
+  will-change: opacity, transform;
+}
+
+.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Transición entre rutas (View Transitions nativas) ---------- */
+
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root) {
+  animation: fade-out 140ms both var(--ease-estado);
+}
+
+::view-transition-new(root) {
+  animation: fade-in 260ms both var(--ease-freno);
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

@@ -11,6 +11,13 @@
   background: var(--color-surface);
   border-top: 1px solid var(--color-border);
   box-shadow: 0 -4px 16px rgba(22, 22, 22, 0.06);
+  transform: translateY(100%);
+  transition-property: transform;
+  /* duración/curva se ajustan inline (300ms entra / 240ms sale) */
+}
+
+.barVisible {
+  transform: translateY(0);
 }
 
 .whatsapp,

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Manrope, Inter } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -59,6 +60,14 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${manrope.variable} ${inter.variable}`}>
       <body>
+        {/*
+          Marca <html> antes del primer paint si la secuencia de entrada del
+          Hero ya se reprodujo en esta sesión de pestaña, para no repetirla
+          en recargas o al volver a "/" por navegación de cliente.
+        */}
+        <Script id="hero-intro-guard" strategy="beforeInteractive">
+          {`(function(){try{var K="svsolavi-intro-seen";if(sessionStorage.getItem(K)){document.documentElement.classList.add("no-hero-intro");}else{sessionStorage.setItem(K,"1");setTimeout(function(){document.documentElement.classList.add("no-hero-intro");},1300);}}catch(e){}})();`}
+        </Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

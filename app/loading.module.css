@@ -1,0 +1,39 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding-block: 40px 64px;
+}
+
+.hero {
+  height: 320px;
+  margin-inline: 24px;
+}
+
+.lines {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.block {
+  background: var(--color-surface-alt);
+  border-radius: 8px;
+  animation: pulse 1.2s var(--ease-estado) infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 900px) {
+  .hero {
+    height: 420px;
+  }
+}

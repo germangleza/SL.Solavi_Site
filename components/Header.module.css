@@ -1,15 +1,54 @@
+.sentinel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
 .header {
   position: sticky;
   top: 0;
   z-index: 100;
   background: var(--color-surface);
-  border-bottom: 1px solid transparent;
-  transition: box-shadow 200ms ease, border-color 200ms ease;
+  transition: background-color var(--d-hover) var(--ease-estado);
+  view-transition-name: header;
+}
+
+:global(html:not(.no-hero-intro)) .header {
+  animation: headerFadeIn 400ms var(--ease-freno) 760ms both;
+}
+
+@keyframes headerFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: var(--color-border);
+  opacity: 0;
+  transition: opacity var(--d-hover) var(--ease-estado);
 }
 
 .scrolled {
-  border-bottom-color: var(--color-border);
-  box-shadow: 0 1px 12px rgba(22, 22, 22, 0.05);
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.scrolled::after {
+  opacity: 1;
 }
 
 .inner {
@@ -17,7 +56,21 @@
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  min-height: 72px;
+  min-height: 88px;
+  transition: min-height var(--d-hover) var(--ease-estado);
+}
+
+.scrolled .inner {
+  min-height: 64px;
+}
+
+.logoWrap {
+  transform-origin: left center;
+  transition: transform var(--d-hover) var(--ease-estado);
+}
+
+.scrolled .logoWrap {
+  transform: scale(0.85);
 }
 
 /* ---------- Navegación de escritorio ---------- */
@@ -38,6 +91,7 @@
 }
 
 .navLink {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
@@ -47,12 +101,19 @@
   font-weight: 600;
   font-size: 0.95rem;
   color: var(--color-ink-soft);
-  transition: color 150ms ease, background-color 150ms ease;
+  transition: color var(--d-hover) var(--ease-estado);
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0.9rem calc(100% - 0.35rem);
+  background-size: 0% 2px;
+  transition-property: color, background-size;
+  transition-duration: var(--d-hover), 220ms;
+  transition-timing-function: var(--ease-estado), var(--ease-estado);
 }
 
 .navLink:hover {
   color: var(--color-ink);
-  background: var(--color-surface-alt);
+  background-size: calc(100% - 1.8rem) 2px;
 }
 
 .caret {
@@ -82,7 +143,7 @@
   gap: 0.15rem;
   padding: 0.6rem 0.75rem;
   border-radius: 10px;
-  transition: background-color 150ms ease;
+  transition: background-color 150ms var(--ease-estado);
 }
 
 .dropdownLink:hover {
@@ -134,7 +195,7 @@
   height: 2px;
   background: var(--color-ink);
   border-radius: 2px;
-  transition: transform 200ms ease, opacity 200ms ease;
+  transition: transform 260ms var(--ease-tambor), opacity 260ms var(--ease-tambor);
 }
 
 .burger {
@@ -165,22 +226,61 @@
   transform: rotate(-45deg);
 }
 
-/* ---------- Panel móvil ---------- */
+/* ---------- Menú móvil: drawer lateral ---------- */
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  background: rgba(10, 16, 22, 0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 240ms var(--ease-estado);
+}
+
+.backdropOpen {
+  opacity: 1;
+  pointer-events: auto;
+}
 
 .mobilePanel {
   position: fixed;
-  inset: 72px 0 0 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 151;
+  width: min(360px, 88vw);
   background: var(--color-surface);
-  padding: 1.5rem 24px calc(1.5rem + env(safe-area-inset-bottom));
+  padding: 96px 24px calc(1.5rem + env(safe-area-inset-bottom));
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  transform: translateX(100%);
+  transition-property: transform;
+  /* duración/curva se ajustan inline (320ms entra / 240ms sale) */
+}
+
+.mobilePanelOpen {
+  transform: translateX(0);
 }
 
 .mobileList {
   display: flex;
   flex-direction: column;
+}
+
+.mobileItem {
+  opacity: 0;
+  transform: translateX(12px);
+  transition-property: opacity, transform;
+  transition-duration: 260ms;
+  transition-timing-function: var(--ease-tambor);
+}
+
+.mobileListOpen .mobileItem {
+  opacity: 1;
+  transform: none;
 }
 
 .mobileLink {
@@ -191,7 +291,7 @@
   border-bottom: 1px solid var(--color-border);
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   color: var(--color-ink);
 }
 
@@ -223,6 +323,7 @@
   .menuToggle {
     display: none;
   }
+  .backdrop,
   .mobilePanel {
     display: none;
   }

@@ -3,6 +3,7 @@
   color: #d7d9dc;
   padding-block: 64px 40px;
   margin-top: auto;
+  view-transition-name: footer;
 }
 
 .top {
