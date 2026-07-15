@@ -2,8 +2,9 @@ export const site = {
   brand: "SV Solavi",
   productBrand: "BLCC",
   descriptor: "Soluciones profesionales para lavandería comercial e industrial",
-  // Se completan mediante variables de entorno antes de publicar.
-  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "",
+  // Puede sobreescribirse con variables de entorno; el valor por defecto es
+  // el número de contacto público de SV Solavi (México).
+  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "524793916632",
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "",
   baseUrl: "https://svsolavi.com",
 } as const;
