@@ -122,7 +122,7 @@ export default function HomePage() {
         <div className="container">
           <div className={styles.blccContent}>
             <span className="eyebrow">Respaldo tecnológico</span>
-            <h2>Tecnología internacional para lavanderías profesionales</h2>
+            <h2>Tecnología internacional para lavanderías</h2>
             <p className="lead">
               Somos distribuidores de BLCC, un fabricante especializado en equipos
               para lavandería comercial e industrial. Cuenta con presencia en +50
