@@ -604,6 +604,7 @@ export const products: Product[] = [
       "Sistema de autolimpieza y doble filtración.",
     ],
     imageAlt: "Máquina cerrada de lavado en seco con percloroetileno BLCC de la serie GXZQ",
+    image: "/images/products/gxzq.jpg",
     technicalNotice:
       "La instalación, operación, ventilación y manejo de solventes deben cumplir la normativa local aplicable. SV Solavi debe validar los requisitos regulatorios y de seguridad antes de ofrecer este equipo.",
     ctaLabel: "Hablar con un especialista en tintorería",
