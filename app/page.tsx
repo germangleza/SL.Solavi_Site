@@ -278,6 +278,49 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* 5.5 Más vendidos */}
+      <section className={styles.bestSellers}>
+        <div className={styles.bestSellersMedia} role="img" aria-label="Fondo pendiente para equipos XTH y SHG">
+          <svg className={styles.bestSellersIcon} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="1.4" />
+            <circle cx="8.5" cy="9.5" r="1.5" stroke="currentColor" strokeWidth="1.4" />
+            <path
+              d="m4 17 4.5-4.5 3 3L15 12l5 5"
+              stroke="currentColor"
+              strokeWidth="1.4"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          <span className={styles.bestSellersMediaLabel}>Imagen pendiente</span>
+        </div>
+        <div className={styles.bestSellersOverlay} aria-hidden="true" />
+        <div className={`container ${styles.bestSellersInner}`}>
+          <Reveal className={styles.bestSellersContent}>
+            <span className={`eyebrow ${styles.bestSellersEyebrow}`}>Equipos más vendidos</span>
+            <h2 className={styles.bestSellersTitle}>Máxima capacidad en el mínimo espacio</h2>
+            <p className={`lead ${styles.bestSellersLead}`}>
+              Los dos equipos apilados más solicitados para lavanderías de autoservicio, hoteles y
+              departamentos: la torre lavadora-secadora XTH y la secadora doble SHG.
+            </p>
+            <div className={styles.bestSellersActions}>
+              <Link
+                href="/productos/autoservicio/torre-lavadora-secadora-xth"
+                className="btn btn--primary btn--lg"
+              >
+                Ver Serie XTH
+              </Link>
+              <Link
+                href="/productos/autoservicio/secadora-doble-apilada-shg"
+                className="btn btn--secondary btn--lg"
+              >
+                Ver Serie SHG
+              </Link>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* 5.6 SV Solavi */}
       <section className="section section--alt">
         <div className="container">

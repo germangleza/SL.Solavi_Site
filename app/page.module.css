@@ -376,6 +376,95 @@
   }
 }
 
+/* ---------- 5.5 Más vendidos ---------- */
+
+.bestSellers {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+}
+
+.bestSellersMedia {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 0.4rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, var(--color-slate), var(--color-dark));
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.bestSellersIcon {
+  width: 32px;
+  height: 32px;
+  opacity: 0.6;
+}
+
+.bestSellersMediaLabel {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.bestSellersOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    100deg,
+    rgba(10, 16, 22, 0.82) 0%,
+    rgba(10, 16, 22, 0.6) 45%,
+    rgba(10, 16, 22, 0.35) 100%
+  );
+}
+
+.bestSellersInner {
+  padding-block: 56px;
+}
+
+.bestSellersContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+  max-width: 40rem;
+}
+
+.bestSellersEyebrow {
+  color: #bcd6f5;
+}
+
+.bestSellersTitle {
+  color: #fff;
+}
+
+.bestSellersLead {
+  color: #e6ebf0;
+}
+
+.bestSellersActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 900px) {
+  .bestSellers {
+    min-height: 480px;
+  }
+
+  .bestSellersInner {
+    padding-block: 80px;
+  }
+}
+
 /* ---------- 5.6 Proceso SV Solavi ---------- */
 
 .logoImage {
