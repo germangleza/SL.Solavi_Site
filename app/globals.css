@@ -272,9 +272,10 @@ button {
   width: 100%;
 }
 
-/* Deja espacio para la barra fija de CTA en móvil. */
+/* Deja espacio para la barra fija de CTA en móvil, después del footer
+   (no en <main>, que dejaría un hueco en blanco antes del footer). */
 @media (max-width: 767px) {
-  main {
+  body {
     padding-bottom: calc(72px + env(safe-area-inset-bottom));
   }
 }
