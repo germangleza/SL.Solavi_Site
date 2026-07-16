@@ -321,10 +321,10 @@ export default function HomePage() {
       <section className="section section--alt">
         <div className="container">
           <Image
-            src="/images/logo/LOGO.jpg"
+            src="/images/logo/logo-color.png"
             alt="SV Solavi — Soluciones para lavanderías industriales"
-            width={260}
-            height={74}
+            width={900}
+            height={201}
             className={styles.logoImage}
           />
           <Reveal className={styles.sectionHead}>

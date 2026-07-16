@@ -26,10 +26,10 @@ export function Logo({
   return (
     <Link href="/" className={styles.logo} aria-label="SV Solavi — inicio">
       <Image
-        src="/images/logo/LOGO.jpg"
+        src="/images/logo/logo-color.png"
         alt={ALT}
-        width={168}
-        height={48}
+        width={900}
+        height={201}
         priority
         className={styles.image}
       />

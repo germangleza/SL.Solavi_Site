@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { MediaPlaceholder } from "@/components/MediaPlaceholder";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -50,7 +50,13 @@ export default function AboutPage() {
               </Link>
             </div>
             <div className={styles.heroMedia}>
-              <MediaPlaceholder label="Equipo de SV Solavi" ratio="4/3" />
+              <Image
+                src="/images/logo/logo-color.png"
+                alt="SV Solavi — Soluciones para lavanderías industriales"
+                width={900}
+                height={201}
+                className={styles.heroLogo}
+              />
             </div>
           </div>
         </div>
