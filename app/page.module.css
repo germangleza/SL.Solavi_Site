@@ -426,7 +426,7 @@
 }
 
 .bestSellersLead {
-  color: #e6ebf0;
+  color: #fff;
 }
 
 .bestSellersActions {
@@ -438,7 +438,7 @@
 
 @media (min-width: 900px) {
   .bestSellers {
-    min-height: 480px;
+    min-height: 720px;
   }
 
   .bestSellersInner {
@@ -624,7 +624,7 @@
 }
 
 .finalCtaText {
-  color: #c8cbcf;
+  color: #fff;
   max-width: 50ch;
 }
 
