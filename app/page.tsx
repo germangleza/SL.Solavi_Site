@@ -268,7 +268,10 @@ export default function HomePage() {
         <div className={`container ${styles.bestSellersInner}`}>
           <Reveal className={styles.bestSellersContent}>
             <span className={`eyebrow ${styles.bestSellersEyebrow}`}>Equipos más vendidos</span>
-            <h2 className={styles.bestSellersTitle}>Máxima capacidad en el mínimo espacio</h2>
+            <h2 className={styles.bestSellersTitle}>
+              Máxima <span className={styles.heroAccent}>capacidad</span> en el mínimo{" "}
+              <span className={styles.heroAccent}>espacio</span>
+            </h2>
             <p className={`lead ${styles.bestSellersLead}`}>
               Lavadora y secadora en una misma solución. La máxima eficiencia para lavanderías de
               autoservicio, hoteles y departamentos.
