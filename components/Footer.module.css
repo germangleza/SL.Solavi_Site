@@ -14,21 +14,13 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.brandCol :global(.logo) :global(.brand) {
-  color: #fff;
-}
-
-.brandCol :global(.logo) :global(.seal) {
-  color: #9aa0a6;
-}
-
-/* El logo tiene fondo blanco; se enmarca en una insignia clara para que
-   se lea bien sobre el footer oscuro. */
-.logoBadge {
+.logoLink {
   display: inline-flex;
-  padding: 0.625rem 0.875rem;
-  background: #fff;
-  border-radius: 12px;
+}
+
+.logoImage {
+  width: 160px;
+  height: auto;
 }
 
 .tagline {

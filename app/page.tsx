@@ -250,20 +250,13 @@ export default function HomePage() {
 
       {/* 5.3 Más vendidos */}
       <section className={styles.bestSellers}>
-        <div className={styles.bestSellersMedia} role="img" aria-label="Fondo pendiente para equipos XTH y SHG">
-          <svg className={styles.bestSellersIcon} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="1.4" />
-            <circle cx="8.5" cy="9.5" r="1.5" stroke="currentColor" strokeWidth="1.4" />
-            <path
-              d="m4 17 4.5-4.5 3 3L15 12l5 5"
-              stroke="currentColor"
-              strokeWidth="1.4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          <span className={styles.bestSellersMediaLabel}>Imagen pendiente</span>
-        </div>
+        <Image
+          src="/images/home/maxima-capacidad.jpg"
+          alt="Torres lavadora-secadora XTH y secadora doble SHG apiladas"
+          fill
+          sizes="100vw"
+          className={styles.bestSellersImage}
+        />
         <div className={styles.bestSellersOverlay} aria-hidden="true" />
         <div className={`container ${styles.bestSellersInner}`}>
           <Reveal className={styles.bestSellersContent}>
@@ -379,6 +372,14 @@ export default function HomePage() {
 
       {/* 5.7 CTA final */}
       <section id="final-cta" className={styles.finalCta}>
+        <Image
+          src="/images/home/ultima-seccion.jpg"
+          alt="Lavandería de autoservicio con equipos BLCC"
+          fill
+          sizes="100vw"
+          className={styles.finalCtaImage}
+        />
+        <div className={styles.finalCtaOverlay} aria-hidden="true" />
         <div className="container">
           <Reveal className={styles.finalCtaInner}>
             <h2 className={styles.finalCtaTitle}>

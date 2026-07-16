@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Logo } from "./Logo";
+import Image from "next/image";
 import { productCategories, sectors, site } from "@/lib/site";
 import styles from "./Footer.module.css";
 
@@ -11,9 +11,15 @@ export function Footer() {
       <div className="container">
         <div className={styles.top}>
           <div className={styles.brandCol}>
-            <div className={styles.logoBadge}>
-              <Logo />
-            </div>
+            <Link href="/" aria-label="SV Solavi — inicio" className={styles.logoLink}>
+              <Image
+                src="/images/logo/logo-blanco.png"
+                alt="SV Solavi — Soluciones para lavanderías industriales"
+                width={480}
+                height={109}
+                className={styles.logoImage}
+              />
+            </Link>
             <p className={styles.tagline}>
               Soluciones profesionales para lavandería comercial e industrial con
               equipos BLCC y la asesoría cercana de SV Solavi.
