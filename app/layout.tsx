@@ -3,7 +3,6 @@ import Script from "next/script";
 import { Manrope, Inter } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { MobileCtaBar } from "@/components/MobileCtaBar";
 import { site } from "@/lib/site";
 import "./globals.css";
@@ -78,7 +77,6 @@ export default function RootLayout({
         <Header />
         <main id="main">{children}</main>
         <Footer />
-        <WhatsAppFloat />
         <MobileCtaBar />
       </body>
     </html>

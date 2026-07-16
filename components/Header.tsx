@@ -85,7 +85,11 @@ export function Header() {
                 <li
                   key={item.href}
                   className={styles.navItem}
-                  onMouseEnter={() => item.children && setOpenGroup(item.href)}
+                  onMouseEnter={() => {
+                    if (item.children && window.matchMedia("(hover: hover)").matches) {
+                      setOpenGroup(item.href);
+                    }
+                  }}
                   onMouseLeave={() => setOpenGroup(null)}
                 >
                   <Link href={item.href} className={styles.navLink}>
