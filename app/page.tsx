@@ -248,37 +248,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5.3 Categorías */}
-      <section className="section section--alt">
-        <div className="container">
-          <Reveal className={styles.sectionHead}>
-            <span className="eyebrow">Catálogo</span>
-            <h2>Encuentra el equipo que necesita tu operación</h2>
-          </Reveal>
-          <div className={styles.cardGrid}>
-            {categories.map((category, i) => (
-              <CategoryCard key={category.slug} index={i} {...category} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5.4 Sectores */}
-      <section className="section">
-        <div className="container">
-          <Reveal className={styles.sectionHead}>
-            <span className="eyebrow">Sectores</span>
-            <h2>Soluciones para diferentes tipos de negocio</h2>
-          </Reveal>
-          <div className={styles.sectorGrid}>
-            {sectors.map((sector, i) => (
-              <SectorCard key={sector.slug} index={i} {...sector} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5.5 Más vendidos */}
+      {/* 5.3 Más vendidos */}
       <section className={styles.bestSellers}>
         <div className={styles.bestSellersMedia} role="img" aria-label="Fondo pendiente para equipos XTH y SHG">
           <svg className={styles.bestSellersIcon} viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -318,6 +288,36 @@ export default function HomePage() {
               </Link>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      {/* 5.4 Categorías */}
+      <section className="section section--alt">
+        <div className="container">
+          <Reveal className={styles.sectionHead}>
+            <span className="eyebrow">Catálogo</span>
+            <h2>Encuentra el equipo que necesita tu operación</h2>
+          </Reveal>
+          <div className={styles.cardGrid}>
+            {categories.map((category, i) => (
+              <CategoryCard key={category.slug} index={i} {...category} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5.5 Sectores */}
+      <section className="section">
+        <div className="container">
+          <Reveal className={styles.sectionHead}>
+            <span className="eyebrow">Sectores</span>
+            <h2>Soluciones para diferentes tipos de negocio</h2>
+          </Reveal>
+          <div className={styles.sectorGrid}>
+            {sectors.map((sector, i) => (
+              <SectorCard key={sector.slug} index={i} {...sector} />
+            ))}
+          </div>
         </div>
       </section>
 
