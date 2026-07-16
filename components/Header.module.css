@@ -171,7 +171,10 @@
   gap: 0.75rem;
 }
 
-.headerCta {
+/* Especificidad extra (.actions .headerCta) para ganar siempre sobre
+   `.btn { display: inline-flex }`, sin depender del orden de las hojas
+   de estilo generadas por Next. */
+.actions .headerCta {
   display: none;
 }
 
@@ -317,7 +320,7 @@
   .desktopNav {
     display: block;
   }
-  .headerCta {
+  .actions .headerCta {
     display: inline-flex;
   }
   .menuToggle {
