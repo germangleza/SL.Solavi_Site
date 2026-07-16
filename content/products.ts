@@ -244,6 +244,7 @@ export const products: Product[] = [
       "Sellos resistentes al desgaste.",
     ],
     imageAlt: "Lavadora horizontal BLCC de la serie XGB",
+    image: "/images/products/xgb.jpg",
     ctaLabel: "Cotizar lavadora horizontal XGB",
     relatedProductIds: ["mg-tl", "xgq"],
     specTables: [
