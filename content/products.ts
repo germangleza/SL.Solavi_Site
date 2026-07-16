@@ -195,6 +195,7 @@ export const products: Product[] = [
       "Monitoreo del proceso.",
     ],
     imageAlt: "Lavadora de barrera sanitaria BLCC de la serie BW",
+    image: "/images/products/bw.jpg",
     featured: true,
     ctaLabel: "Evaluar una solución de barrera sanitaria",
     relatedProductIds: ["hg", "xgq"],
@@ -647,6 +648,7 @@ export const products: Product[] = [
       "Control de temperatura para operación segura.",
     ],
     imageAlt: "Calandra industrial BLCC de la serie YP",
+    image: "/images/products/yp.jpg",
     featured: true,
     ctaLabel: "Cotizar una línea de planchado",
     relatedProductIds: ["zd3300-v", "ings-3300", "hg"],
@@ -693,6 +695,7 @@ export const products: Product[] = [
       "Función antiestática.",
     ],
     imageAlt: "Máquina dobladora BLCC ZD3300-V",
+    image: "/images/products/zd3300-v.jpg",
     ctaLabel: "Cotizar dobladora ZD3300-V",
     relatedProductIds: ["yp", "ings-3300"],
     specTables: [
@@ -730,6 +733,7 @@ export const products: Product[] = [
       "Botón de paro de emergencia.",
     ],
     imageAlt: "Alimentadora de textiles BLCC INGS-3300",
+    image: "/images/products/ings-3300.jpg",
     ctaLabel: "Cotizar alimentadora INGS-3300",
     relatedProductIds: ["yp", "zd3300-v"],
     specTables: [
@@ -770,6 +774,7 @@ export const products: Product[] = [
       "Frenado rápido.",
     ],
     imageAlt: "Centrífuga de tres patas BLCC de la serie MG-TL",
+    image: "/images/products/mg-tl.jpg",
     ctaLabel: "Cotizar centrífuga",
     relatedProductIds: ["xgb", "xgq"],
     specTables: [
@@ -802,6 +807,7 @@ export const products: Product[] = [
       "Configuración compacta.",
     ],
     imageAlt: "Mesa de planchado BLCC YTT-1475",
+    image: "/images/products/ytt-1475.jpg",
     ctaLabel: "Cotizar mesa de planchado YTT-1475",
     relatedProductIds: ["hxgt-1", "jtj-1", "ldr3-04r"],
     specTables: [
@@ -831,6 +837,7 @@ export const products: Product[] = [
       "Formato compacto.",
     ],
     imageAlt: "Generador de vapor BLCC LDR3-0.4R",
+    image: "/images/products/ldr3-04r.jpg",
     ctaLabel: "Cotizar generador de vapor",
     relatedProductIds: ["ytt-1475", "hxgt-1", "jtj-1"],
     specTables: [
@@ -858,6 +865,7 @@ export const products: Product[] = [
       "Orientada a prendas de mayor complejidad.",
     ],
     imageAlt: "Mesa de planchado deluxe BLCC HXGT-1",
+    image: "/images/products/hxgt-1.jpg",
     ctaLabel: "Cotizar mesa deluxe HXGT-1",
     relatedProductIds: ["ytt-1475", "ldr3-04r", "rxj-1"],
     specTables: [
@@ -889,6 +897,7 @@ export const products: Product[] = [
       "Operación semiautomática.",
     ],
     imageAlt: "Transportador de prendas BLCC CT",
+    image: "/images/products/ct.jpg",
     ctaLabel: "Cotizar transportador de prendas",
     relatedProductIds: ["bzt-50", "rxj-1", "gxzq"],
     specTables: [
@@ -916,6 +925,7 @@ export const products: Product[] = [
       "Uso profesional en prendas y piezas textiles.",
     ],
     imageAlt: "Prensa utilitaria BLCC JTJ-1",
+    image: "/images/products/jtj-1.jpg",
     ctaLabel: "Cotizar prensa utilitaria JTJ-1",
     relatedProductIds: ["ytt-1475", "hxgt-1", "rxj-1"],
     specTables: [
@@ -946,6 +956,7 @@ export const products: Product[] = [
       "Uso antes o después del proceso de limpieza.",
     ],
     imageAlt: "Mesa de desmanchado BLCC SWS",
+    image: "/images/products/sws.jpg",
     ctaLabel: "Cotizar mesa de desmanchado SWS",
     relatedProductIds: ["swh", "gxzq", "rxj-1"],
     specTables: [
@@ -975,6 +986,7 @@ export const products: Product[] = [
       "Uso después del lavado o limpieza en seco.",
     ],
     imageAlt: "Maniquí de acabado BLCC RXJ-1",
+    image: "/images/products/rxj-1.jpg",
     ctaLabel: "Cotizar maniquí de acabado RXJ-1",
     relatedProductIds: ["hxgt-1", "jtj-1", "ct"],
     specTables: [
@@ -1001,6 +1013,7 @@ export const products: Product[] = [
       "Estación de uso comercial.",
     ],
     imageAlt: "Lavadora comercial de calzado BLCC BZD-1",
+    image: "/images/products/bzd-1.jpg",
     ctaLabel: "Cotizar lavadora de calzado BZD-1",
     relatedProductIds: ["swq", "bzt-50"],
     specTables: [
@@ -1029,6 +1042,7 @@ export const products: Product[] = [
       "Protección durante almacenamiento, traslado y entrega.",
     ],
     imageAlt: "Empacadora de prendas BLCC BZT-50",
+    image: "/images/products/bzt-50.jpg",
     ctaLabel: "Cotizar empacadora BZT-50",
     relatedProductIds: ["ct", "rxj-1"],
     specTables: [
