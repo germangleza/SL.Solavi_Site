@@ -382,7 +382,8 @@ export default function HomePage() {
         <div className="container">
           <Reveal className={styles.finalCtaInner}>
             <h2 className={styles.finalCtaTitle}>
-              Encuentra la solución adecuada para tu lavandería
+              Encuentra la solución adecuada para tu{" "}
+              <span className={styles.heroAccent}>lavandería</span>
             </h2>
             <p className={styles.finalCtaText}>
               Cuéntanos sobre tu operación y recibe una recomendación de equipos y
