@@ -270,8 +270,8 @@ export default function HomePage() {
             <span className={`eyebrow ${styles.bestSellersEyebrow}`}>Equipos más vendidos</span>
             <h2 className={styles.bestSellersTitle}>Máxima capacidad en el mínimo espacio</h2>
             <p className={`lead ${styles.bestSellersLead}`}>
-              Los dos equipos apilados más solicitados para lavanderías de autoservicio, hoteles y
-              departamentos: la torre lavadora-secadora XTH y la secadora doble SHG.
+              Lavadora y secadora en una misma solución. La máxima eficiencia para lavanderías de
+              autoservicio, hoteles y departamentos.
             </p>
             <div className={styles.bestSellersActions}>
               <Link
