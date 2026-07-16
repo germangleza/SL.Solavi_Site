@@ -350,9 +350,6 @@ export default function HomePage() {
                     <circle className={styles.stepRingProgress} cx="48" cy="48" r="40" />
                   </svg>
                   <span className={styles.stepNumber}>{step.number}</span>
-                  {i < steps.length - 1 && (
-                    <span className={styles.stepConnector} aria-hidden="true" />
-                  )}
                 </span>
                 <h3 className={styles.stepTitle}>{step.title}</h3>
                 <p className={styles.stepDesc}>{step.description}</p>

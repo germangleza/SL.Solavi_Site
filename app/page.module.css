@@ -532,38 +532,6 @@
   transform: none;
 }
 
-.stepConnector {
-  position: absolute;
-  top: 50%;
-  left: 100%;
-  width: 1.5rem;
-  height: 2px;
-  margin-top: -1px;
-  background: var(--color-primary);
-  opacity: 0.35;
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform 500ms var(--ease-tambor);
-  transition-delay: calc(var(--i, 0) * 500ms + 900ms);
-}
-
-.stepGrid:global(.is-in) .stepConnector {
-  transform: scaleX(1);
-}
-
-@media (max-width: 799px) {
-  .stepConnector {
-    top: 100%;
-    left: 50%;
-    width: 2px;
-    height: 1.5rem;
-    margin-top: 0;
-    margin-left: -1px;
-    transform: scaleY(0);
-    transform-origin: top center;
-  }
-}
-
 .stepTitle {
   font-size: 1.2rem;
 }
