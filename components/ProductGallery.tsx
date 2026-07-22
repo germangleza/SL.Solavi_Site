@@ -48,7 +48,6 @@ export function ProductGallery({ colors, alt }: Props) {
             </button>
           );
         })}
-        <span className={styles.currentLabel}>{current.label}</span>
       </div>
     </div>
   );
