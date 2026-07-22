@@ -565,7 +565,7 @@ const baseProducts: Product[] = [
       "Diferentes colores disponibles.",
     ],
     imageAlt: "Máquina de lavado en seco con hidrocarburo BLCC de la serie SWH",
-    image: "/images/products/swh.jpg",
+    image: "/images/products/swh-gris.jpg",
     featured: true,
     ctaLabel: "Cotizar equipo SWH",
     relatedProductIds: ["gxzq", "sws", "rxj-1"],
@@ -1080,8 +1080,7 @@ const COLOR_VARIANTS: Record<string, string[]> = {
   hg: ["azul", "celeste", "aqua", "amarillo", "rosa"],
   swq: ["azul", "celeste", "aqua", "amarillo", "rosa"],
   hgq: ["azul", "celeste", "aqua", "amarillo", "rosa"],
-  // SWH: su foto de catálogo (swh.jpg) ya es la variante aqua. Todavía no
-  // hay una foto gris, así que no se incluye "gris" por ahora.
+  // SWH sí tiene aqua (su render original swh.jpg); el gris viene de swh-gris.jpg.
   swh: ["aqua", "azul", "celeste", "amarillo", "rosa"],
 };
 
@@ -1089,7 +1088,7 @@ const COLOR_VARIANTS: Record<string, string[]> = {
  * Productos cuya foto de catálogo NO es una versión gris neutra, así que no
  * se les antepone la opción "Gris" automática.
  */
-const SKIP_GRIS = new Set<string>(["swh"]);
+const SKIP_GRIS = new Set<string>();
 
 /**
  * Overrides de imagen para colores cuya foto no sigue la convención
@@ -1097,6 +1096,7 @@ const SKIP_GRIS = new Set<string>(["swh"]);
  * ese color). Estructura: { [id]: { [color]: ruta } }.
  */
 const COLOR_IMAGE_OVERRIDES: Record<string, Record<string, string>> = {
+  // El render original de SWH (swh.jpg) es la variante aqua.
   swh: { aqua: "/images/products/swh.jpg" },
 };
 
