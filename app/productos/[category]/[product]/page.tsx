@@ -6,6 +6,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { MediaPlaceholder } from "@/components/MediaPlaceholder";
 import { ModelComparisonTable } from "@/components/ModelComparisonTable";
 import { ProductCard } from "@/components/ProductCard";
+import { ProductGallery } from "@/components/ProductGallery";
 import { IconWhatsApp, IconArrow } from "@/components/Icons";
 import {
   getAllProducts,
@@ -123,7 +124,9 @@ export default async function ProductPage({
               </div>
             </div>
             <div className={styles.heroMedia}>
-              {p.image ? (
+              {p.colors && p.colors.length > 0 ? (
+                <ProductGallery colors={p.colors} alt={p.imageAlt} />
+              ) : p.image ? (
                 <Image
                   src={p.image}
                   alt={p.imageAlt}

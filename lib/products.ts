@@ -11,6 +11,24 @@ export type SpecTable = {
   rows: SpecRow[];
 };
 
+export type ProductColor = {
+  /** Clave estable del color (ej. "azul"). Debe existir en COLOR_SWATCHES. */
+  key: string;
+  /** Etiqueta visible (ej. "Azul"). */
+  label: string;
+  /** Ruta a la foto del equipo en ese color. */
+  image: string;
+};
+
+/** Muestra de color para los selectores de la ficha de producto. */
+export const COLOR_SWATCHES: Record<string, string> = {
+  azul: "#3c629e",
+  celeste: "#7dc3d1",
+  aqua: "#4f9aab",
+  amarillo: "#e0a94f",
+  rosa: "#b54b7e",
+};
+
 export type Product = {
   /** Identificador corto y estable. */
   id: string;
@@ -28,6 +46,11 @@ export type Product = {
   imageAlt: string;
   /** Ruta a una foto real del equipo en /public. Si falta, se usa un placeholder. */
   image?: string;
+  /**
+   * Variantes de color disponibles. Cada una apunta a su propia foto.
+   * La primera de la lista es la que se muestra por defecto en la ficha.
+   */
+  colors?: ProductColor[];
   specTables: SpecTable[];
   technicalNotice?: string;
   ctaLabel: string;

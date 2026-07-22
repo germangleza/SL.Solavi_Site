@@ -1,4 +1,4 @@
-import type { Product } from "@/lib/products";
+import type { Product, ProductColor } from "@/lib/products";
 
 /**
  * Catálogo de equipos BLCC.
@@ -7,7 +7,7 @@ import type { Product } from "@/lib/products";
  * provienen del documento maestro y deben confirmarse con SV Solavi antes de
  * cerrar una venta. No se publican precios.
  */
-export const products: Product[] = [
+const baseProducts: Product[] = [
   // ===================================================================
   // MÁS VENDIDOS (orden fijo: siempre primero en el catálogo)
   // ===================================================================
@@ -1064,3 +1064,44 @@ export const products: Product[] = [
     ],
   },
 ];
+
+/**
+ * Variantes de color por producto. Solo listar los productos que las tienen.
+ * El orden define el orden de los selectores; el primero es el color por
+ * defecto que se muestra en la ficha. Las imágenes viven en
+ * /public/images/products/{id}-{color}.jpg
+ */
+const COLOR_VARIANTS: Record<string, string[]> = {
+  xth: ["azul", "celeste", "aqua", "amarillo", "rosa"],
+  shg: ["azul", "celeste", "aqua", "amarillo", "rosa"],
+  xgq: ["azul", "celeste", "aqua", "amarillo", "rosa"],
+  "xgq-50-150": ["azul", "celeste", "aqua", "amarillo", "rosa"],
+  xsx: ["azul", "celeste", "aqua", "amarillo", "rosa"],
+  hg: ["azul", "celeste", "aqua", "amarillo", "rosa"],
+  swq: ["azul", "celeste", "aqua", "amarillo", "rosa"],
+  hgq: ["azul", "celeste", "aqua", "amarillo", "rosa"],
+  swh: ["azul", "celeste", "amarillo", "rosa"],
+};
+
+const COLOR_LABELS: Record<string, string> = {
+  azul: "Azul",
+  celeste: "Celeste",
+  aqua: "Aqua",
+  amarillo: "Amarillo",
+  rosa: "Rosa",
+};
+
+function buildColors(id: string): ProductColor[] | undefined {
+  const keys = COLOR_VARIANTS[id];
+  if (!keys) return undefined;
+  return keys.map((key) => ({
+    key,
+    label: COLOR_LABELS[key] ?? key,
+    image: `/images/products/${id}-${key}.jpg`,
+  }));
+}
+
+export const products: Product[] = baseProducts.map((p) => {
+  const colors = buildColors(p.id);
+  return colors ? { ...p, colors } : p;
+});
