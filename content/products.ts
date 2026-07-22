@@ -1084,6 +1084,7 @@ const COLOR_VARIANTS: Record<string, string[]> = {
 };
 
 const COLOR_LABELS: Record<string, string> = {
+  gris: "Gris",
   azul: "Azul",
   celeste: "Celeste",
   aqua: "Aqua",
@@ -1091,17 +1092,22 @@ const COLOR_LABELS: Record<string, string> = {
   rosa: "Rosa",
 };
 
-function buildColors(id: string): ProductColor[] | undefined {
-  const keys = COLOR_VARIANTS[id];
-  if (!keys) return undefined;
-  return keys.map((key) => ({
-    key,
-    label: COLOR_LABELS[key] ?? key,
-    image: `/images/products/${id}-${key}.jpg`,
-  }));
-}
-
 export const products: Product[] = baseProducts.map((p) => {
-  const colors = buildColors(p.id);
-  return colors ? { ...p, colors } : p;
+  const keys = COLOR_VARIANTS[p.id];
+  if (!keys) return p;
+
+  const colors: ProductColor[] = [];
+  // "Gris" es la foto neutra que ya se usa en la tarjeta del catálogo:
+  // se mantiene como primera opción (y color por defecto de la ficha).
+  if (p.image) {
+    colors.push({ key: "gris", label: COLOR_LABELS.gris, image: p.image });
+  }
+  for (const key of keys) {
+    colors.push({
+      key,
+      label: COLOR_LABELS[key] ?? key,
+      image: `/images/products/${p.id}-${key}.jpg`,
+    });
+  }
+  return { ...p, colors };
 });

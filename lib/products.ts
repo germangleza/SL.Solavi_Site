@@ -22,6 +22,7 @@ export type ProductColor = {
 
 /** Muestra de color para los selectores de la ficha de producto. */
 export const COLOR_SWATCHES: Record<string, string> = {
+  gris: "#e9e9e7",
   azul: "#3c629e",
   celeste: "#7dc3d1",
   aqua: "#4f9aab",
