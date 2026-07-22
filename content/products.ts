@@ -1080,7 +1080,24 @@ const COLOR_VARIANTS: Record<string, string[]> = {
   hg: ["azul", "celeste", "aqua", "amarillo", "rosa"],
   swq: ["azul", "celeste", "aqua", "amarillo", "rosa"],
   hgq: ["azul", "celeste", "aqua", "amarillo", "rosa"],
-  swh: ["azul", "celeste", "amarillo", "rosa"],
+  // SWH: su foto de catálogo (swh.jpg) ya es la variante aqua. Todavía no
+  // hay una foto gris, así que no se incluye "gris" por ahora.
+  swh: ["aqua", "azul", "celeste", "amarillo", "rosa"],
+};
+
+/**
+ * Productos cuya foto de catálogo NO es una versión gris neutra, así que no
+ * se les antepone la opción "Gris" automática.
+ */
+const SKIP_GRIS = new Set<string>(["swh"]);
+
+/**
+ * Overrides de imagen para colores cuya foto no sigue la convención
+ * /images/products/{id}-{color}.jpg (p. ej. cuando la foto de catálogo ya es
+ * ese color). Estructura: { [id]: { [color]: ruta } }.
+ */
+const COLOR_IMAGE_OVERRIDES: Record<string, Record<string, string>> = {
+  swh: { aqua: "/images/products/swh.jpg" },
 };
 
 const COLOR_LABELS: Record<string, string> = {
@@ -1099,14 +1116,15 @@ export const products: Product[] = baseProducts.map((p) => {
   const colors: ProductColor[] = [];
   // "Gris" es la foto neutra que ya se usa en la tarjeta del catálogo:
   // se mantiene como primera opción (y color por defecto de la ficha).
-  if (p.image) {
+  if (p.image && !SKIP_GRIS.has(p.id)) {
     colors.push({ key: "gris", label: COLOR_LABELS.gris, image: p.image });
   }
+  const overrides = COLOR_IMAGE_OVERRIDES[p.id] ?? {};
   for (const key of keys) {
     colors.push({
       key,
       label: COLOR_LABELS[key] ?? key,
-      image: `/images/products/${p.id}-${key}.jpg`,
+      image: overrides[key] ?? `/images/products/${p.id}-${key}.jpg`,
     });
   }
   return { ...p, colors };
